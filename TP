@@ -1,0 +1,32 @@
+import socket
+import sys
+import struct
+
+def: main
+	HOST = sys.argv[2]
+	PORT = sys.argv[3] 
+ 
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+
+	if sys.argv[4]=='ativo':
+		try:
+			s.connect((Host, Port))
+		except socket.error:
+			sys.exit()
+		print 'conectado'
+		
+	else if sys.argv[4]=='passivo':
+
+		try:
+			s.bind((HOST, PORT)) #Tenta a conexao do socket ao server, caso haja um erro o programa fecha
+		except socket.error:
+			print 'Bind Error'
+			sys.exit()
+			 
+		print 'Socket bind complete'	#mensagem de sucesso
+		 
+		s.listen(10) #socket espera esta preparado para que abrigue uma conexao
+	
+  
+
+
